@@ -1,0 +1,34 @@
+<div class="login-container">
+    <h2>Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter your email" appAutoFocusInputDirective />
+            @if (email.invalid && email.dirty)
+            {
+                <div class="error">
+                    @if (email.errors?.['email']) {
+                        <span>Invalid email format</span>
+                    }
+                </div>
+            }
+        </div>
+
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Enter your password"/>
+        </div>
+        @if (error) {
+            <div class="error">
+                <span>Email or password incorrect</span>
+            </div>
+        }
+
+        <a routerLink="/Register">Register now</a>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+</div>

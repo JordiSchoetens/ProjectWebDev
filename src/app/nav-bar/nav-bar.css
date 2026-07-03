@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+nav a {
+  color: #2563eb;
+  text-decoration: none;
+  padding: 18px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  background-color: #deeafa;
+}
+
+nav a.active {
+  border-bottom-color: #2563eb;
+  font-weight: 600;
+}
+
+nav a:nth-child(2) {
+  margin-right: auto;
+  font-size: 18px;
+}

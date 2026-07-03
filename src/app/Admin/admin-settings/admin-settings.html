@@ -1,0 +1,31 @@
+<div class="admin-settings-container">
+  <div class="user-list">
+    <h3>All Users</h3>
+    <div class="search-input-container">
+        <input type="text" [(ngModel)]="searchUser" placeholder="Search users by email" />
+    </div>
+    <ul>
+      @for (user of Users | filterUserPipe:searchUser; track $index) {
+        <li>
+          <span>{{ user.Email }}</span>
+          <button (click)="MakeAdmin(user.Id!, user.Email)">Make Admin</button>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="admin-list">
+    <h3>All Admins</h3>
+    <div class="search-input-container">
+        <input type="text" [(ngModel)]="searchAdmin" placeholder="Search admins by email" />
+    </div>
+    <ul>
+      @for (admin of Admins | filterUserPipe:searchAdmin; track $index) {
+        <li>
+          <span>{{ admin.Email }}</span>
+          <button (click)="RevokeAdmin(admin.Id!)">Revoke Admin</button>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

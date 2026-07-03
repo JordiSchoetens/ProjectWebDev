@@ -1,0 +1,51 @@
+<div class="add-game-container">
+    <h2>Update Game</h2>
+    <form [formGroup]="EditForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" formControlName="Name" class="form-control" placeholder="Enter game name" appAutoFocusInputDirective>
+
+            @if (Name.invalid && Name.touched) {
+                <div class="error">
+                    Name is required
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description (optional)</label>
+            <textarea id="description" formControlName="Description" class="form-control" rows="4" placeholder="Enter game description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type</label>
+            <input type="text" id="type" formControlName="Type" class="form-control" placeholder="Enter game type">
+            
+            @if (Type.invalid && Type.touched) {
+                <div class="error">
+                    Type is required
+                </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <div id="rating" class="rating" role="radiogroup" aria-label="Game rating">
+                @for(star of stars; track star; let i= $index) {
+                    <span (click)="setRating(i + 1)" [style.color]="i < ratingModel() ? 'gold' : 'gray'">
+                    {{ i < ratingModel() ? '★' : '☆' }}
+                    </span>
+                }
+            </div>
+        </div>
+
+        <div>
+            <label for="image">Change Game Image</label>
+            <input type="file" id="image" (change)="onFileSelected($event)" class="form-control" accept="image/*">
+        </div>
+
+        <button type="submit" [disabled]="EditForm.invalid" class="btn btn-primary">
+            Update Game
+        </button>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isAuthenticated(){
+    return request.auth.uid != null;
+    }
+    
+    function isAdmin(){
+    return isAuthenticated() &&
+    	exists(/databases/$(database)/documents/Admins/$(request.auth.uid));
+    }
+    
+    function isAuthor(){
+    return isAuthenticated() &&
+    	request.auth.uid == resource.data.Author;
+    }
+    
+    match /GameCollection/{gameId} {
+      allow read: if isAuthenticated() && (isAuthor() || isAdmin());
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthor() || isAdmin();
+    }
+    
+    match /Admins/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && isAdmin();
+      allow delete: if isAuthenticated() && isAdmin();
+    }
+    
+    match /Users/{userId} {
+    allow read: if isAdmin();
+    allow create: if isAuthenticated();
+    }
+  }
+}

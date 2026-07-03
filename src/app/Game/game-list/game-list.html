@@ -1,0 +1,8 @@
+
+<div class="search-input-container">
+    <input type="text" [(ngModel)]="search" placeholder="Search games by name" />
+</div>
+
+@for (item of games | filterPipe:search; track $index) {
+    <app-game-item [GameItem]="item"></app-game-item>
+}

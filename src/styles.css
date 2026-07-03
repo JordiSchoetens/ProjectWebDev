@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #ffffff; color: #0f172a; }
+
+.mat-simple-snackbar,
+.snack-success,
+.snack-error {
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.mat-simple-snackbar { color: #2563eb; } 
+.snack-success { color: #10b981; }
+.snack-error { color: #ef4444; }
+
+.star, .starfilled{
+	font-size: 1.15rem;
+	vertical-align: middle;
+}
+
+.star{
+	color: #cbd5e1;
+}
+
+.starfilled {
+	color: #f59e0b;
+}

@@ -1,0 +1,15 @@
+<div>
+    <nav>
+        @if (auth.currentUser) {
+            <a routerLink="Games" routerLinkActive="active">Games</a>
+            <a routerLink="Add" routerLinkActive="active">Add Game</a>
+            @if (showAdminLink) {
+                <a routerLink="Admin" routerLinkActive="active">Admin Dashboard</a>
+            }
+            <a (click)="logout()">{{ this.auth.currentUser.email }} Logout</a>
+        }
+        @else {
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+        }
+    </nav>
+</div>

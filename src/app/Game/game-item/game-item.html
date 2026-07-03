@@ -1,0 +1,24 @@
+
+<div class="container item-row">
+    <img [src]="GameItem()!.ImgUrl" alt="{{GameItem()!.Name}} image" class="item-img-left" />
+    <div class="item-details">
+        <h3>{{GameItem()!.Name}}</h3>
+        <p>Description: 
+            @if(GameItem()?.Description) {
+                {{GameItem()?.Description}}
+            }
+            @else {
+                No description was given to this game.
+            }
+        </p>
+        <p>Type: {{GameItem()!.Type}}</p>
+        <span [innerHTML]="GameItem()!.Rating | starPipe"></span>
+        <button class="Delete" (click)="DeleteGame(GameItem()!.Id, GameItem()!.ImgUrl)">
+            Delete
+        </button>
+        <button class="Edit" (click)="EditGame(GameItem()!.Id)">
+            Edit
+        </button>
+    </div>
+</div>
+

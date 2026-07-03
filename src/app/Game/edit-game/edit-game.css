@@ -1,0 +1,85 @@
+.add-game-container {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 30px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.add-game-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+    color: #2563eb;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+    color: #2563eb;
+}
+
+.form-control {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.form-control:focus {
+	outline: none;
+	border-color: #2563eb;
+}
+
+.form-control.ng-invalid.ng-touched {
+	border-color: #f44336;
+}
+
+.error {
+	margin-top: 5px;
+	color: #f44336;
+	font-size: 12px;
+}
+
+button {
+	width: 100%;
+	padding: 12px;
+	background-color: #3b82f6;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+button:hover:not(:disabled) {
+	background-color: #2563eb;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.rating {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.rating span {
+	font-size: 1.6rem;
+	cursor: pointer;
+}
+
+.rating span:hover {
+	transform: scale(1.1);
+}

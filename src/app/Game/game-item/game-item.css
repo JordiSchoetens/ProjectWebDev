@@ -1,0 +1,71 @@
+.container {
+	max-width: 720px;
+	margin: 12px auto;
+	padding: 14px 16px;
+	background: #ffffff;
+	border: 1px solid #e6e6e6;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(2,6,23,0.04);
+}
+
+.item-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 24px;
+}
+
+.item-img-left {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 8px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+	flex-shrink: 0;
+}
+
+.item-details {
+	flex: 1;
+}
+
+h3 {
+	margin: 0 0 6px 0;
+	color: #2563eb;
+	font-size: 1.05rem;
+	font-weight: 700;
+}
+
+p {
+	margin: 4px 0;
+	opacity: 0.85;
+	font-size: 0.95rem;
+}
+
+button {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 14px;
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	font-weight: 600;
+	cursor: pointer;
+	float: right;
+}
+
+.Delete:hover:not(:disabled) {
+	background: #dc2626;
+}
+
+.Delete{
+	background: #ef4444;
+}
+
+.Edit:hover:not(:disabled) {
+	background: #2563eb;
+}
+
+.Edit{
+	background: #3b82f6;
+	margin-right: 8px;
+}
